@@ -16,6 +16,7 @@ if (isset($_POST['name']) && isset($_POST['email'])) {
 
     // SMTP Settings
     $mail->isSMTP();
+    $mail->SMTPDebug = 2;
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username = $senderemail;
@@ -33,6 +34,6 @@ if (isset($_POST['name']) && isset($_POST['email'])) {
     if ($mail->send()) {
         echo "Email sent successfully to " . $email;
     } else {
-        echo "Something is wrong: <br><br>" . $mail->ErrorInfo;
+        echo "ERRORRRR: <br><br>" . $mail->ErrorInfo;
     }
 }
